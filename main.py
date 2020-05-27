@@ -5,7 +5,10 @@ def main():
     player = "x"
     pl = "player1"
     while True:
-        choice = int(input(pl +" Enter the move: "))
+	try:
+            choice = int(input(pl +" Enter the move: "))
+	except:
+	    continue
         update_board(board, choice, player)
         player = player_turn(player)
         clear_screen()
